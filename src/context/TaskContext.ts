@@ -1,6 +1,7 @@
 import {createContext, Dispatch, SetStateAction} from "react";
 
 export interface TaskType {
+    id: number,
     text: string
 }
 

@@ -7,7 +7,25 @@ interface TaskComponentType{
 export default function Task({task}:TaskComponentType) {
     const context = useContext(TasksContext);
     const {tasks, setTasks} = context;
-    let mainContent:JSX.Element = <p>{task.text}</p>;
+    const [this_task, setThisTask] = useState<TaskType>(task);
+    const [mainContent, setMainContent] = useRef<ReactElement>(<p>{this_task.text}</p>)
+
+    function handleInputSubmit(){
+        setMainContent(<p>{this_task.text}</p>);
+    }
+
+    function handleInputChange(){
+        setThisTask(mainContent.value);
+    }
+    function handleEdit(){
+        setMainContent(<input type="text" onChange={handleInputChange} value={this_task.text}/>);
+        mainContent.addEventListener("keyup", (event) => {
+            if(event.keyCode === 13){
+                handleInputSubmit();
+            }
+        })
+    }
+
     return (
         <div>
             {mainContent}

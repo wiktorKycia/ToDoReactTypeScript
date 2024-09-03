@@ -7,7 +7,7 @@ interface TaskComponentType{
 export default function Task({task}:TaskComponentType) {
     const context = useContext(TasksContext);
     const {tasks, setTasks} = context;
-    let mainContent:JSX.Element = <p>{task}</p>;
+    let mainContent:JSX.Element = <p>{task.text}</p>;
     return (
         <div>
             {mainContent}

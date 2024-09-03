@@ -1,11 +1,18 @@
-
+import {TaskType} from "../../context/TaskContext.ts";
 
 interface TaskComponentType{
-    text: string
+    task: TaskType
 }
 
-export default function Task({text}:TaskComponentType){
+export default function Task({task}:TaskComponentType){
     return (
-        <p>{text}</p>
+        <div>
+            <p>{task}</p>
+            <div>
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+
     )
 }

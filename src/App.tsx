@@ -13,7 +13,7 @@ function App() {
                 <AddTask tasks={tasks}/>
                 <Container>
                     {tasks.map((task, index) => (
-                        <Task text={task.text} key={index}/>
+                        <Task task={task} key={index}/>
                     ))}
                 </Container>
             </TasksContext.Provider>

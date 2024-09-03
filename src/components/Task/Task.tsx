@@ -1,5 +1,5 @@
 import {TasksContext, TaskType} from "../../context/TaskContext.ts";
-import {useContext} from "react";
+import {useContext, useState, useRef, ReactElement} from "react";
 interface TaskComponentType{
     task: TaskType
 }

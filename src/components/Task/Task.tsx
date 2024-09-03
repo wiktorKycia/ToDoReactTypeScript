@@ -12,7 +12,7 @@ export default function Task({task}:TaskComponentType) {
         <div>
             {mainContent}
             <div>
-                <button>Edit</button>
+                <button onClick={handleEdit}>Edit</button>
                 <button>Delete</button>
             </div>
         </div>

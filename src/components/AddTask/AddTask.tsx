@@ -17,7 +17,7 @@ export default function AddTask(){
 
     function handleAddTask(){
         console.log(tasks);
-        setTasks(t => [...t, {text: taskName}]);
+        setTasks(t => [...t, {id: t[t.length-1].id+1, text: taskName}]);
         console.log(tasks);
     }
 
